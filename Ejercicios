@@ -38,6 +38,9 @@
  7.- Programa pseudo-inicial:
      - Definimos una variable de tipo contador (donde contabilizamos el número de iteraciones).
      - Agregamos un switch de FIN-FICHERO....
+     - En el párrafo PROCESO, asignamos nuestro nombre completo a las variables WS-NOMBRE, WS-APELLIDO1 y WS-APELLIDO2 
+       (lo hacemos con tres sentencias MOVE).
+     - A continuación de los MOVES hacemos un DISPLAY de la estructura WS-CLIENTE.
      - Ponemos la cláusula UNTIL en el proceso...
      - Nuestro programa tiene que mostrar en la salida:
        Diez veces el DISPLAY: ' *****  PROCESO **** '
