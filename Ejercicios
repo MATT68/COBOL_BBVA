@@ -41,6 +41,7 @@
      - Ponemos la cláusula UNTIL en el proceso...
      - Nuestro programa tiene que mostrar en la salida:
        Diez veces el DISPLAY: ' *****  PROCESO **** '
-       Estadísticas del programa (el valor de la variable contador.)
+       Estadísticas del programa (el valor de la variable contador.):
+          TOTAL FILAS PROCESADAS : 10
        
        
