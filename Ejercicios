@@ -1,0 +1,46 @@
+
+ Ejercicios:
+
+ 1.- JCL para copiar el dataset 'TSOUJ40.FICHERO.EMPLEADO' en un dataset
+     de tu usuario, llamado 'TSOUJxx.FICHERO.EMPLEADO' donde xx es tu 
+     número de usuario.
+
+     El JCL tendrá un paso de borrado y uno de copiado.
+
+ 2.- Añadir  dos pasos al JCL anterior para copiar los datasets secuenciales
+     TSOUJ40.CCAI.DATA.CLIENTES
+     TSOUJ40.CCAI.DATA.EMPRESAS
+     en dos datasets que se llamen igual, pero con tu usuario como 
+     primer puntero.
+
+ 3.- Copiar usando los paneles desde la librería TSOUJXX.CCAI.JCL
+      a la librería TSOUJXX.CCAI.JCL2 los miembros IEBCOP*, NEWDS, BORRADO,
+      y otro de tu gusto.
+ 
+ 4.- Copiar el miembro COMPICOX desde un TSOUJXX.CCAI.PROC a la librería
+     TSOUJXX.CCAI.JCL.
+
+ 5.- Usando un JCL, que ejecute el programa IEBCOPY, debes copiar la libreria
+     TSOUJxx.CCAI.JCL en la librería TSOUJXX.CCAI.JCL4.
+     
+      un paso de JCL ===>  copy TSOUJxx.CCAI.JCL TSOUJxx.CCAI.JCL4
+  
+ 6.- Borrar las librerías :
+     TSOUJxx.CCAI.JCL2
+     TSOUJxx.CCAI.JCL4
+     TSOUJxx.CCAI.JCL5
+     
+     Los parámetros de espacio de la nueva librería serán en 5 pistas de      primaria, 5 de secundaria y 2 para el directorio.
+     
+     ------------------------------------------------------------
+              E J E R C I C I O S         C O B O L 
+     ------------------------------------------------------------ 
+ 7.- Programa pseudo-inicial:
+     - Definimos una variable de tipo contador (donde contabilizamos el número de iteraciones).
+     - Agregamos un switch de FIN-FICHERO....
+     - Ponemos la cláusula UNTIL en el proceso...
+     - Nuestro programa tiene que mostrar en la salida:
+       Diez veces el DISPLAY: ' *****  PROCESO **** '
+       Estadísticas del programa (el valor de la variable contador.)
+       
+       
