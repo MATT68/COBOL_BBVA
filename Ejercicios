@@ -47,4 +47,14 @@
        Estadísticas del programa (el valor de la variable contador.):
           TOTAL FILAS PROCESADAS : 10
        
-       
+   8.-  Sobre el ejercicio anterior, modificamos los displays, para que en cada paso por el PROCESO muestre si el número
+        de la vuelta que estamos dando es PAR o IMPAR.
+         
+        DIVIDE WC-CONTADOR BY 2 GIVING Ws-RESULTADO REMAINDER ws-RESTO
+        
+        IF "comprueba aquí si es par"
+           DISPLAY ' PAR '
+        ELSE
+            DISPLAY ' ES IMPAR '
+        END-IF
+        
