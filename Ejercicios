@@ -59,8 +59,13 @@
         END-IF
         
    9.- Lectura de ficheros.
-       Vamos a procesar el fichero TSOUJxx.FICHERO.EMPLEADO. Por tanto, lo primero será que lo tengas a tu disposición (si no lo tienes
+       Vamos a procesar el fichero TSOUJxx.FICHERO.EMPLEADO. 
+       Por cada fila leída vamos a lanzar un DISPLAY para mostrar en el SPOOL algo así:
+       NOMBRE  :   XXXXXX   APELLIDO:  XXXXXXXX   SALARIO : 999999999 COMISION: 000000000
+       
+       Por tanto, lo primero será que tengas el fichero a tu disposición (si no lo tienes
         cópialo del  TSOUJ40.FICHERO.EMPLEADO).
+       
        En el programa tenemos que agregar líneas para controlar el fichero en los siguientes puntos:
         A.- ENVIRONMENT DIVISION ==> FILE-CONTROL. ==>  SELECT EMPLE ASSIGN EMPLEADO ....
         B.- DATA DIVISION.       ==> FILE SECTION. ==>  FD  STATEMENT
