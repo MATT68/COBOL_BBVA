@@ -93,6 +93,7 @@
              END-READ
              
              CLOSE EMPLE.
-             
+          
+         TODO PROGRAMA COBOL DEBE MOSTRAR AL TERMINAR UNAS ESTADÍSTICAS COMPLETAS DE LOS FICHEROS TRATADOS.
               
               
