@@ -58,3 +58,36 @@
             DISPLAY ' ES IMPAR '
         END-IF
         
+   9.- Lectura de ficheros.
+       Vamos a procesar el fichero TSOUJxx.FICHERO.EMPLEADO. Por tanto, lo primero será que lo tengas a tu disposición (si no lo tienes
+        cópialo del  TSOUJ40.FICHERO.EMPLEADO).
+       En el programa tenemos que agregar líneas para controlar el fichero en los siguientes puntos:
+        A.- ENVIRONMENT DIVISION ==> FILE-CONTROL. ==>  SELECT EMPLE ASSIGN EMPLEADO ....
+        B.- DATA DIVISION.       ==> FILE SECTION. ==>  FD  STATEMENT
+        C.- DATA DIVISION.       ==> WORKING-STORAGE SECTION. ==>  01  WS-REG-EMPLEADO.
+        D.- OPEN  ----  READ - READ - READ - ..... - CLOSE
+        
+        A.  SELECT EMPLE 
+              ASSIGN EMPLEADO
+              FILE STATUS IS WS-FILE-STATUS.
+              
+        B.- FD  EMPLE 
+                RECORD CONTAINS 59 CHARACTERS
+                DATA RECORD IS REC-EMPLE.
+            01  REC-EMPLE                      PIC X(59).
+            
+        C.- 01  WS-REG-EMPLEADO.
+                05 ....
+                
+        D.-  OPEN INPUT ...
+        
+             READ EMPLE
+                INTO  WS-REG-EMPLEADO
+                AT END
+                     SET FINAL-FICHERO  TO TRUE
+             END-READ
+             
+             CLOSE EMPLE.
+             
+              
+              
