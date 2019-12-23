@@ -115,4 +115,7 @@
        Si el apellido es mayor que R mostramos EMPLEADO, NOMBRE, APELLIDO Y 
        SALARIO + COMISION.
        
-       
+   11.- OPCIONAL: Instalación de Eclipse en la máquina virtual
+        sudo apt install default-jre
+        sudo snap install --classic eclipse 
+         
