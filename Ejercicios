@@ -97,3 +97,22 @@
          TODO PROGRAMA COBOL DEBE MOSTRAR AL TERMINAR UNAS ESTADÍSTICAS COMPLETAS DE LOS FICHEROS TRATADOS.
               
               
+10.-  En este programa vamos a agregar la siguiente funcionalidad:
+
+       A. Sobre el programa que te funcionó el último día, debes agregar la 
+       gestión de errores, para hacer los displays y para el programa cuando 
+       se produzca un error.
+
+       B.- La copy del fichero de empleado la tienes que traer con la 
+       sentencia COPY.
+
+       C.- Si el apellido es menor que M, hacemos un display de:
+       NUMERO DE EMPLEADO, NOMBRE, APELLIDO Y SALARIO
+
+       Si el apellido es mayor que M y menor que R hacemos un display de:
+       NUMERO DE EMPLEADO, NOMBRE, APELLIDO, DEPT Y COMISION
+
+       Si el apellido es mayor que R mostramos EMPLEADO, NOMBRE, APELLIDO Y 
+       SALARIO + COMISION.
+       
+       
