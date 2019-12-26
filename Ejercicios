@@ -119,3 +119,26 @@
         sudo apt install default-jre
         sudo snap install --classic eclipse 
          
+   12.- Tratamiento del fichero de VENDEDOR.
+        Leemos el fichero TSOUJXX.FICHERO.VENDEDOR (primero debes copiarlo desde TSOUJ40.FICHERO.VENDEDOR ).
+        
+        Nuestro programa leerá todos los vendedores y por cada uno hará el siguiente tratamiento:
+        Si el codigo de vendedor comienza por : 'V0'
+         mostraremos: BECARIO - NOMBRE - APELLIDO - FECHA ALTA (EN FORMATO AAAAMMDD)
+        Si el codigo de vendedor comienza por : 'V1'
+         mostraremos: JUNIOR  - NOMBRE - APELLIDO - FECHA ALTA (EN FORMATO AAAAMMDD)
+        Si el codigo de vendedor comienza por : 'V2'
+         mostraremos: SENIOR  - NOMBRE - APELLIDO - FECHA ALTA (EN FORMATO AAAAMMDD)
+        Si el codigo de vendedor comienza por : 'V3'
+         mostraremos: ANALISTA  - NOMBRE - APELLIDO - FECHA ALTA (EN FORMATO AAAAMMDD)
+        Si el codigo de vendedor comienza por : 'V4'
+         mostraremos: GERENTE  - NOMBRE - APELLIDO - FECHA ALTA (EN FORMATO AAAAMMDD)
+        Si el codigo de vendedor comienza por : 'V5'
+         mostraremos: SOCIO  - NOMBRE - APELLIDO - FECHA ALTA (EN FORMATO AAAAMMDD)
+         
+        Además cuando el código de vendedor coincida con el código de responsable, mostraremos en la salida:
+         **************************************************** 
+          Vxxx - NOMBRE - APELLIDO - ES EL JEFE SUPREMO
+         ****************************************************
+         
+
