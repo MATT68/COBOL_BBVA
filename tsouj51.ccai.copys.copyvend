@@ -1,0 +1,12 @@
+      *****************************************************************
+      *    COPY PARA EL FICHERO DE VENDEDORES
+      *****************************************************************
+       01  :XX:-VENDEDORES.
+           05 :XX:-COD-VENDEDOR    PIC X(06).
+           05 :XX:-NOMBRE          PIC X(15).
+           05 :XX:-APELLIDO        PIC X(20).
+           05 :XX:-FX-ALTA         PIC X(8).
+           05 :XX:-IM-SALARIO      PIC 9(6)V99.
+           05 :XX:-SECCION         PIC X.
+           05 :XX:-COD-RESPONSABLE PIC X(6).
+
