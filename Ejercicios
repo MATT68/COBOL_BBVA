@@ -141,7 +141,7 @@
           Vxxx - NOMBRE - APELLIDO - ES EL JEFE SUPREMO
          ****************************************************
          
-     13.- Vamos a escribir un fichero llamado VENDECP3.
+     13.- Vamos a escribir un fichero llamado VENDEC3PO.
           Este fichero va a contener los mismos campos que el fichero VENDEDOR más un campo de SALARIO en formato COMP-3.
           Este campo estará entre el salario actual y la sección.
           Puntos a agregar / considerar en el programa:
