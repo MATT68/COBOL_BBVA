@@ -152,7 +152,50 @@
           - OPEN / WRITE / CLOSE
           - ESTADISTICAS
           
-     14.- 
-     
+     14.- (Antes de correr hay que aprender a caminar)
+      Leemos el fichero de vendedores. Y escribimos en dos ficheros de salida.
+      A uno lo podemos llamar VENDC3PO y al otro VENDESAL (por ejemplo).
+      Por cada registro leído del fichero de vendedores haremos el siguiente proceso:
+       Si el salario es menor que 1000 escribiremos un registro en el fichero VENDC3PO.
+       Si el salario no es menor que 1000, escribiremos en en VENDESAL.
+      El formato del fichero VENDC3PO es similar al fichero del ejercicio anterior. 
+      El formato del fichero VENDESAL es el mismo que el de entrada. (Te vale la copy COPYVEND pero haciendo 
+       un replacing diferente). 
+      En el párrafo FIN se deben emitir las estadísticas completas del programa:
+      *********************************************************
+      ***   FILAS LEIDAS DEL FICHERO A
+      ***    FILAS ESCRITAS EN EL FICHERO B
+      ***    FILAS ESCRITAS EN EL FICHERO C
+      ********************************************************* 
          
+      15.- CRUCE DE FICHEROS. (Aprendiendo a correr)
+      Para este cruce de ficheros vamos a hacer el siguiente supuesto. Nos dan dos ficheros:
+      XXXX.FICHERO.EMPLEADOS
+      XXXX.FICHERO.EMPLEADOS.BANK2 (esta copy la tenemos en el fichero CPEMPBK2)
+      Son los empleados de dos bancos que se van a fusionar. Y queremos separarlos en tres "botes" diferentes.
+      Uno con aquellos empleados cuyo código de empleado se repite en ambos bancos (DUPLICA2).
+      Otro con los empleados del primer fichero que no están en el segundo (EMPLE1)
+      Un último fichero que contiene los empleados exclusivos del BANK2 (EMPLEB2).
+      
+      La estructura del fichero de salida DUPLICA2 será:
+      CO-EMPLEADO
+      NOMBRE1
+      APELLIDO1
+      NOMBRE2
+      APELLIDO2
+      
+      La estructura del fichero EMPLE1 será la COPYEMPL que ya hemos manejado en otras ocasiones.
+      La estructura del fichero EMPLEB2 será la misma de entrada, CPEMPBK2.
+      
+      Por supuestos,  se deben emitir las estadísticas completas del programa:
+      *********************************************************
+      ***   FILAS LEIDAS DEL FICHERO A
+      ***   FILAS LEIDAS DEL FICHERO B
+      ***    FILAS ESCRITAS EN EL FICHERO C
+      ***    FILAS ESCRITAS EN EL FICHERO D
+      ***    FILAS ESCRITAS EN EL FICHERO E
+      ********************************************************* 
+      
+      FELIZ NOCHEVIEJA Y QUE TENGAS UN AÑO MÁS SANO QUE EL AMANECER DEL DÍA 1 !!!
+      
 
