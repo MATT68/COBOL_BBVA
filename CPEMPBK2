@@ -1,0 +1,13 @@
+      *****************************************************************
+      *    COPY PARA EL FICHERO DE EMPLEADOS BANK2
+      *****************************************************************
+       01  :XX:-EMPLE-BANK2.
+           05 :XX:-COD-EMPLEADO    PIC X(06).
+           05 :XX:-APELLIDO1       PIC X(10).
+           05 :XX:-APELLIDO2       PIC X(15).
+           05 :XX:-NOMBRE          PIC X(10).           
+           05 :XX:-CO-DEPT         PIC X(3).
+           05 :XX:-DS-DEPT         PIC X(15).
+           05 :XX:-FX-ALTA         PIC X(8).
+           05 :XX:-IM-SALARIO      PIC 9(6)V99.
+           05 :XX:-OFICINA         PIC X(5).
