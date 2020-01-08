@@ -1,0 +1,16 @@
+      *****************************************************************
+      *    COPY PARA EL FICHERO DE DUPLICADOS
+      *****************************************************************
+       01  WS-DP-EMPLEADOS.
+           05 WS-DP-NUM-EMPLE      PIC X(06).
+           05 WS-DP-NOMBRE1        PIC X(12).
+           05 WS-DP-APELLIDO1      PIC X(15).
+           05 WS-DP-CO-DEPT1       PIC X(03).
+           05 WS-DP-IM-SALARIO1    PIC 9(9)V99 COMP-3.
+           05 WS-DP-IM-COMISION1   PIC 9(9)V99 COMP-3.
+           05 WS-DP-NOMBRE2        PIC X(12).
+           05 WS-DP-APELLIDO2      PIC X(15).
+           05 WS-DP-CO-DEPT2       PIC X(03).
+           05 WS-DP-IM-SALARIO2    PIC 9(9)V99 COMP-3.
+           05 WS-DP-IM-COMISION2   PIC 9(9)V99 COMP-3.
+

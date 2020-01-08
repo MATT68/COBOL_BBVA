@@ -1,0 +1,191 @@
+      * ---------------------------------------------------
+      *    AUTHOR:        ...........................
+      * DESCRIPCION  :
+      *
+      * ---------------------------------------------------
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRG300CB.
+      ************************************************************
+      *  ENVIRONMENT   D I V I S I O N
+      ************************************************************
+       ENVIRONMENT DIVISION.
+      *
+       CONFIGURATION SECTION.
+       SOURCE-COMPUTER. Z.
+      *
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+      *
+      ************************************************************
+      *    D A T A     D I V I S I O N
+      ************************************************************
+       DATA DIVISION.
+       FILE SECTION.
+      *    FICHEROS QUE USA EL PROGRAMA
+       WORKING-STORAGE SECTION.
+      ************************************************************
+      *    WORKING STORAGE
+      ************************************************************
+       01  WS-VARIABLES.
+           05  WS-CLIENTE.
+               10  WS-NOMBRE                  PIC X(20).
+               10  WS-APELLIDO1               PIC X(30).
+               10  WS-APELLIDO2               PIC X(20).
+      *
+           05  WS-NUEMPL                      PIC X(6).
+           05  WS-NUMERO-CALLE                PIC  9(5).
+           05  WS-SQLCODE                     PIC +ZZZZ9.
+           05  WS-OPERACION                   PIC X(8).
+           05  WS-PARRAFO                     PIC X(8).
+           05  WS-TABLA                       PIC X(8).
+      *
+       01  WC-CONTADORES.
+           05  WC-CONTADOR                    PIC  9(5).
+      ************************************************************
+      *     LITERALES
+      ************************************************************
+       01  LT-LITERALES.
+           05  LT-SI                          PIC X   VALUE 'S'.
+           05  LT-NO                          PIC X   VALUE 'N'.
+           05  CT-UNO                         PIC 9   VALUE 1.
+           05  LT-EMPLE                       PIC X(8) VALUE 'RAEMPLE '.
+           05  LT-OPEN                        PIC X(8) VALUE 'OPEN CUR'.
+           05  LT-CLOSE                       PIC X(8) VALUE 'CLOSE CU'.
+           05  LT-SELECT                      PIC X(8) VALUE 'SELECT  '.
+           05  LT-INSERT                      PIC X(8) VALUE 'INSERT  '.
+           05  LT-FETCH                       PIC X(8) VALUE 'FETCH   '.
+      *
+      ******************************************************************00440422
+      **              SWITCHES                                        **00440522
+      ******************************************************************00440622
+       01  SW-SWITCHES.
+           05  SW-FINAL-FICHERO               PIC X.
+               88  FINAL-FICHERO                       VALUE 'Y'.
+               88  NO-FINAL-FICHERO                    VALUE 'N'.
+      ******************************************************************00441922
+      **              AREA DE COMUNICACION SQLCA                      **00442022
+      ******************************************************************00442122
+           EXEC SQL
+               INCLUDE SQLCA
+           END-EXEC.
+
+           EXEC SQL
+               INCLUDE RAEMPLE
+           END-EXEC.
+
+      ************************************************************
+      *      P R O C E D U R E          D I V I S I O N
+      ************************************************************
+       PROCEDURE DIVISION.
+
+           PERFORM 1000-INICIO
+              THRU 1000-INICIO-EXIT.
+      *
+           PERFORM 2000-PROCESO
+              THRU 2000-PROCESO-EXIT.
+      *
+           PERFORM 8000-FIN
+              THRU 8000-FIN-EXIT.
+      *
+       1000-INICIO.
+      ************************************************************
+      *    INICIALIZA VARIABLES
+      *    ABRE FICHERO, LEER PRIMER REGISTRO,..
+      ************************************************************
+           DISPLAY '*******  I N I C I O  ******************'
+           INITIALIZE WS-VARIABLES
+                      WC-CONTADORES.
+      *
+           ACCEPT WS-NUEMPL              FROM SYSIN.
+      *
+       1000-INICIO-EXIT.
+           EXIT.
+      *
+       2000-PROCESO.
+      *****************************************************
+      *   PROCESAMOS LA FILA LEIDA
+      *****************************************************
+           DISPLAY '** P R O C E S O   ***' WC-CONTADOR
+      *
+           MOVE WS-NUEMPL      TO T102-NUEMPL
+           DISPLAY ' T102-NUEMPL : ' T102-NUEMPL
+      *
+           EXEC SQL
+               SELECT  NUEMPL,
+                       NOMBRE,
+                       INICIAL,
+                       APELLIDO,
+                       SALARIO
+               INTO  :T102-NUEMPL,
+                     :T102-NOMBRE,
+                     :T102-INICIAL,
+                     :T102-APELLIDO,
+                     :T102-SALARIO
+               FROM    TSOUJ40.RAEMPLE
+               WHERE   NUEMPL = :T102-NUEMPL
+           END-EXEC.
+      *
+           DISPLAY ' SQLCODE : ' SQLCODE
+           EVALUATE SQLCODE
+               WHEN 0
+                   ADD 1    TO WC-CONTADOR
+               WHEN +100
+                   DISPLAY '******************************'
+                   DISPLAY '***      NO ENCONTRADO     *** '
+                   DISPLAY '******************************'
+               WHEN OTHER
+                   MOVE SQLCODE     TO WS-SQLCODE
+                   MOVE LT-SELECT   TO WS-OPERACION
+                   MOVE LT-EMPLE    TO WS-TABLA
+                   MOVE '3000-'     TO WS-PARRAFO
+      *
+                   PERFORM 9100-ERROR-TABLA
+                      THRU 9100-ERROR-TABLA-EXIT
+           END-EVALUATE.
+      *
+           DISPLAY '** NUEMPL  : ' WS-NUEMPL
+           DISPLAY 'T102-NUEMPL  : ' T102-NUEMPL
+           DISPLAY 'T102-NOMBRE  : ' T102-NOMBRE
+           DISPLAY 'T102-INICIAL : ' T102-INICIAL
+           DISPLAY 'T102-APELLIDO: ' T102-APELLIDO
+           DISPLAY 'T102-SALARIO : ' T102-SALARIO
+      *
+           .
+       2000-PROCESO-EXIT.
+           EXIT.
+
+       8000-FIN.
+      * ---------------------------------------------------
+      *    CERRAR FICHEROS, ETC.
+      * ---------------------------------------------------
+           DISPLAY '*******  FIN PROGRAMA ******************'
+           DISPLAY '**************************************************'
+           DISPLAY '** TOTAL FILAS LEIDAS : ' WC-CONTADOR '        **'
+           DISPLAY '**************************************************'
+      *
+           STOP RUN.
+      *
+       8000-FIN-EXIT.
+           EXIT.
+       9100-ERROR-TABLA.
+      ********************************************************
+      *   GESTION DE ERRORES
+      ********************************************************
+      *    SET HAY-ERROR TO TRUE
+      *
+           DISPLAY '**********************************************'
+           DISPLAY '****        ERROR EN TABLA '
+           DISPLAY '****   OPERACION   :   ' WS-OPERACION
+           DISPLAY '****   TABLA       :   ' WS-TABLA
+           DISPLAY '****   PARRAFO     :   ' WS-PARRAFO
+           DISPLAY '****   FILE STATUS :   ' WS-SQLCODE
+           DISPLAY '**********************************************'
+      *
+           PERFORM 8000-FIN
+              THRU 8000-FIN-EXIT.
+      *
+       9100-ERROR-TABLA-EXIT.
+           EXIT.
+      *
+
+

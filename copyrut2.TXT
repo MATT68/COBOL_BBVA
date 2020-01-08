@@ -1,0 +1,30 @@
+      ****************************************************************  00010000
+      *   COPY PARA LA RUTINA DE CODIFICACION DE NOMBRES                00020001
+      ****************************************************************  00021000
+      *                                                                 00030000
+       01  CP-RT-CODIFICACION.                                          00040001
+           05  CP-CODIF-I.                                              00050001
+               10  CP-TIPO-I                 PIC X(2).                  00051000
+                   88 CP-CODIFICA-NOMBRE       VALUES '01'.             00051101
+                   88 CP-CODIFICA-FECHA        VALUES '02'.             00051201
+                   88 CP-CODIFICA-SALARIO      VALUES '03'.             00051301
+               10  CP-NOMBRE                 PIC X(20).                 00052001
+               10  CP-APELLIDO1              PIC X(20).                 00053001
+               10  CP-APELLIDO2              PIC X(20).                 00054001
+               10  CP-FECHA-I                PIC X(8).                  00055001
+               10  CP-IM-SALARIO             PIC 9(9)V99.               00056001
+           05  CP-CODIF-O.                                              00060001
+               10  CP-COD-RETORNO-O          PIC XX.                    00061000
+                   88 CP-RETORNO-OK            VALUES '00'.             00061101
+                   88 CP-NOMBRE-VACIO          VALUES '01'.             00061201
+                   88 CP-FECHA-VACIA           VALUES '02'.             00061301
+                   88 CP-SALARIO-VACIO         VALUES '03'.             00061401
+               10  CP-NOMBRE-O               PIC X(20).                 00061501
+               10  CP-FECHA-O                PIC X(8).                  00062000
+               10  CP-IM-SALARIO-O           PIC 9(9)V99.               00063001
+           05  CP-CODIF-ERR.                                            00070001
+               10  CP-MSG-ERROR              PIC X(20).                 00080000
+               10  CP-TABLA-ERR              PIC X(8).                  00090000
+               10  CP-OPERACION-ERR          PIC X(8).                  00100000
+               10  CP-SQLCODE-ERR            PIC 9(5).                  00110000
+

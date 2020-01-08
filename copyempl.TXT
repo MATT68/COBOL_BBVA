@@ -1,0 +1,12 @@
+      *****************************************************************
+      *    COPY PARA EL FICHERO DE EMPLEADOS
+      *****************************************************************
+       01  :XX:-EMPLEADOS.
+           05 :XX:-NUM-EMPLE       PIC X(06).
+           05 :XX:-NOMBRE          PIC X(12).
+           05 :XX:-INICIAL         PIC X(01).
+           05 :XX:-APELLIDO        PIC X(15).
+           05 :XX:-CO-DEPT         PIC X(03).
+           05 :XX:-IM-SALARIO      PIC 9(9)V99.
+           05 :XX:-IM-COMISION     PIC 9(9)V99.
+

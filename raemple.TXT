@@ -1,0 +1,73 @@
+      ******************************************************************
+      * DCLGEN TABLE(TSOUJ40.RAEMPLE)                                  *
+      *        LIBRARY(TSOUJ40.AD40.COPYS(RAEMPLE))                    *
+      *        ACTION(REPLACE)                                         *
+      *        LANGUAGE(COBOL)                                         *
+      *        NAMES(T102-)                                            *
+      *        STRUCTURE(RAEMPLE)                                      *
+      *        QUOTE                                                   *
+      *        DBCSDELIM(NO)                                           *
+      *        COLSUFFIX(YES)                                          *
+      *        INDVAR(YES)                                             *
+      * ... IS THE DCLGEN COMMAND THAT MADE THE FOLLOWING STATEMENTS   *
+      ******************************************************************
+           EXEC SQL DECLARE TSOUJ40.RAEMPLE TABLE
+           ( NUEMPL                         CHAR(6) NOT NULL,
+             NOMBRE                         VARCHAR(12) NOT NULL,
+             INICIAL                        CHAR(1),
+             APELLIDO                       VARCHAR(15) NOT NULL,
+             DEPT                           CHAR(3),
+             TLFN                           CHAR(4),
+             FECHING                        DATE,
+             CODTRA                         DECIMAL(3, 0),
+             NIVEDUC                        SMALLINT,
+             SEXO                           CHAR(1),
+             FECHNAC                        DATE,
+             SALARIO                        DECIMAL(8, 2)
+           ) END-EXEC.
+      ******************************************************************
+      * COBOL DECLARATION FOR TABLE TSOUJ40.RAEMPLE                    *
+      ******************************************************************
+       01  RAEMPLE.
+      *                       NUEMPL
+           10 T102-NUEMPL          PIC X(6).
+           10 T102-NOMBRE.
+      *                       NOMBRE LENGTH
+              49 T102-NOMBRE-LEN   PIC S9(4) USAGE COMP.
+      *                       NOMBRE
+              49 T102-NOMBRE-TEXT
+                 PIC X(12).
+      *                       INICIAL
+           10 T102-INICIAL         PIC X(1).
+           10 T102-APELLIDO.
+      *                       APELLIDO LENGTH
+              49 T102-APELLIDO-LEN
+                 PIC S9(4) USAGE COMP.
+      *                       APELLIDO
+              49 T102-APELLIDO-TEXT
+                 PIC X(15).
+      *                       DEPT
+           10 T102-DEPT            PIC X(3).
+      *                       TLFN
+           10 T102-TLFN            PIC X(4).
+      *                       FECHING
+           10 T102-FECHING         PIC X(10).
+      *                       CODTRA
+           10 T102-CODTRA          PIC S9(3)V USAGE COMP-3.
+      *                       NIVEDUC
+           10 T102-NIVEDUC         PIC S9(4) USAGE COMP.
+      *                       SEXO
+           10 T102-SEXO            PIC X(1).
+      *                       FECHNAC
+           10 T102-FECHNAC         PIC X(10).
+      *                       SALARIO
+           10 T102-SALARIO         PIC S9(6)V9(2) USAGE COMP-3.
+      ******************************************************************
+      * INDICATOR VARIABLE STRUCTURE                                   *
+      ******************************************************************
+       01  IRAEMPLE.
+           10 INDSTRUC           PIC S9(4) USAGE COMP OCCURS 12 TIMES.
+      ******************************************************************
+      * THE NUMBER OF COLUMNS DESCRIBED BY THIS DECLARATION IS 12      *
+      ******************************************************************
+

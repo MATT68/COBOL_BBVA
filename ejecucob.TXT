@@ -1,0 +1,70 @@
+//EJECUCOB  JOB T0001,DMS0086,TIME=(,10),                               00001000
+//             NOTIFY=&SYSUID,MSGLEVEL=(1,1)                            00003000
+//********************************************************************* 00004000
+//*                   BORRAR FICHERO SECUENCIAL                       * 00004100
+//********************************************************************* 00004200
+//*                                                                     00004300
+//STEP0    EXEC  PGM=IDCAMS                                             00004400
+//SYSPRINT DD SYSOUT=*                                                  00004500
+//SYSIN    DD *                                                         00004600
+    DEL TSOUJ51.FICHERO.EMPLEADO.SORTED                                 00004700
+    DEL TSOUJ51.FICHERO.EMPLEADO.BANK2.SORTED                           00004800
+    DEL TSOUJ51.FICHERO.EMPLES1                                         00004900
+    DEL TSOUJ51.FICHERO.EMPLES2                                         00005000
+    DEL TSOUJ51.FICHERO.DUPLIK2                                         00005100
+    SET MAXCC=0                                                         00005200
+//*                                                                     00005300
+//********************************************************************* 00005400
+//*               ORDENAMOE EL FICHERO EMPLEADO                       * 00005500
+//********************************************************************* 00005600
+//STEP20   EXEC PGM=SORT                                                00005700
+//SORTIN   DD  DSN=TSOUJ51.FICHERO.EMPLEADO,DISP=SHR                    00005800
+//SORTOUT  DD  DSN=TSOUJ51.FICHERO.EMPLEADO.SORTED,                     00005900
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=59,RECFM=FB),            00006000
+//             SPACE=(TRK,(1,1)),UNIT=SYSDA                             00006100
+//SYSPRINT DD  SYSOUT=*                                                 00006200
+//SYSOUT   DD  SYSOUT=*                                                 00006300
+//SYSIN    DD  *                                                        00006400
+  SORT FIELDS=(1,6,A),FORMAT=BI                                         00006700
+  SUM FIELDS=(38,11,ZD,49,11,ZD)                                        00007023
+//********************************************************************* 00007123
+//*               ORDENAMOS EL FICHERO EMPLEADO BANK2                 * 00007225
+//********************************************************************* 00007323
+//STEP30   EXEC PGM=ICEMAN                                              00007423
+//SORTIN   DD  DSN=TSOUJ51.FICHERO.EMPLEADO.BANK3,DISP=SHR              00007524
+//SORTOUT  DD  DSN=TSOUJ51.FICHERO.EMPLEADO.BANK2.SORTED,               00007623
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=80,RECFM=FB),            00007723
+//             SPACE=(TRK,(1,1)),UNIT=SYSDA                             00007823
+//SYSPRINT DD  SYSOUT=*                                                 00007923
+//SYSOUT   DD  SYSOUT=*                                                 00008023
+//SYSIN    DD  *                                                        00008123
+  SORT FIELDS=(1,6,A),                                                  00008223
+               FORMAT=BI                                                00008323
+  SUM FIELDS=NONE                                                       00008423
+//*******************************************************************   00008523
+//** EJECUCION DE UN PROGRAMA COBOL, SIN DB2.                      **   00008623
+//**                                                               **   00008723
+//** SUSITUIR:                                                     **   00008823
+//** COBOL001:  POR EL NOMBRE DEL  EJECUTABLE.                     **   00008923
+//** AAAAAAAA:  LA LIBRERIA DE EJECUTABLES.                        **   00009023
+//** O SEA, TSOUJ51 POR NUESTRO USUARIO                            **   00009123
+//*******************************************************************   00010000
+//EJECU  EXEC PGM=PRG110CB,                                             00650000
+//             REGION=2048K                                             00660000
+//STEPLIB  DD  DSNAME=CEE.SCEERUN,DISP=SHR                              00670000
+//         DD  DSNAME=TSOUJ51.CCAI.LOAD,DISP=SHR                        00671000
+//EMPLEADO DD  DSN=TSOUJ51.FICHERO.EMPLEADO.SORTED,DISP=SHR             00672000
+//EMPLEBK2 DD  DSN=TSOUJ51.FICHERO.EMPLEADO.BANK2.SORTED,DISP=SHR       00672100
+//DUPLIK2  DD  DSN=TSOUJ51.FICHERO.DUPLIK2,                             00673000
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=90,RECFM=FB),            00674000
+//             SPACE=(TRK,(5,5)),UNIT=SYSDA                             00675000
+//EMPLES1  DD  DSN=TSOUJ51.FICHERO.EMPLES1,                             00676000
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=59,RECFM=FB),            00677000
+//             SPACE=(TRK,(5,5)),UNIT=SYSDA                             00678000
+//EMPLES2  DD  DSN=TSOUJ51.FICHERO.EMPLES2,                             00679000
+//             DISP=(,CATLG,DELETE),DCB=(LRECL=80,RECFM=FB),            00679100
+//             SPACE=(TRK,(5,5)),UNIT=SYSDA                             00679200
+//SYSPRINT DD  SYSOUT=*                                                 00680000
+//CEEDUMP  DD  SYSOUT=*                                                 00690000
+//SYSUDUMP DD  SYSOUT=*                                                 00700000
+

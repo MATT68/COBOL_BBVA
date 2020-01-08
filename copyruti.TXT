@@ -1,0 +1,17 @@
+      ****************************************************************  00010000
+      *   COPY PARA LA RUTINA DE FECHAS*                                00020000
+      ****************************************************************  00021000
+      *                                                                 00030000
+       01  CP-RT-FECHAS.                                                00040000
+           05  CP-F-INPUT.                                              00050000
+               10  CP-TIPO-I                 PIC X(2).                  00051000
+               10  CP-FECHA-I                PIC X(8).                  00052000
+           05  CP-F-OUTPUT.                                             00060000
+               10  CP-COD-RETORNO-O          PIC XX.                    00061000
+               10  CP-FECHA-O                PIC X(8).                  00062000
+           05  CP-F-ERROR.                                              00070000
+               10  CP-MSG-ERROR              PIC X(20).                 00080000
+               10  CP-TABLA-ERR              PIC X(8).                  00090000
+               10  CP-OPERACION-ERR          PIC X(8).                  00100000
+               10  CP-SQLCODE-ERR            PIC 9(5).                  00110000
+
