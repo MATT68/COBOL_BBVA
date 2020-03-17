@@ -1,0 +1,6 @@
+Instalamos esto: 
+
+sudo apt install build-essential && libltdl-dev && libdb-dev && libncurses5-dev
+sudo apt-get install libgmp3-dev
+wget http://sourceforge.net/projects/open-cobol/files/gnu-cobol/3.0/gnucobol-3.0-rc1.tar.gz
+tar -xvf gnucobol-3.0-rc1.tar.gz 
