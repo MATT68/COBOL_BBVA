@@ -17,17 +17,16 @@
 # Instalación COBOL y OpenCobolIDE:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 cd
-mkdir cobol cobol/bin cobol/copys cobol/rutinas cobol/includes 
+mkdir cobol cobol/bin cobol/copys cobol/rutinas cobol/includes cobol/fuentes
+cd cobol
 
 wget https://launchpadlibrarian.net/300661364/python3-opencobolide_4.7.6-1_all.deb
-
 sudo apt install -y ./python3-opencobolide_4.7.6-1_all.deb
 
 # Esto instala  gnucobol v1.0. Para instalar v3.0 hacemos:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Instalación gnucobol 3.0:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-cd cobol
 wget http://sourceforge.net/projects/open-cobol/files/gnu-cobol/3.0/gnucobol-3.0-rc1.tar.gz
 tar xvf gnucobol-3.0-rc1.tar.gz
 cd gnucobol-3.0-rc1
