@@ -36,3 +36,4 @@ make
 make check
 sudo make install
 sudo ldconfig
+sudo apt-get install openssh-server
