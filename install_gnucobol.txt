@@ -28,7 +28,7 @@ sudo apt install -y ./python3-opencobolide_4.7.6-1_all.deb
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Instalación gnucobol 3.0:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
+cd cobol
 wget http://sourceforge.net/projects/open-cobol/files/gnu-cobol/3.0/gnucobol-3.0-rc1.tar.gz
 tar xvf gnucobol-3.0.tar.gz
 cd gnu-cobol-3.0
