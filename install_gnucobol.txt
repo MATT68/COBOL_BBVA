@@ -1,6 +1,39 @@
-Instalamos esto: 
+cd
+mkdir cobol cobol/bin cobol/copys cobol/rutinas cobol/includes 
 
-sudo apt install build-essential && libltdl-dev && libdb-dev && libncurses5-dev
-sudo apt-get install libgmp3-dev
+# Debemos haber instalado DB2, con una instancia llamada db2inst1 y 
+# el grupo de administradores llamado db2iadm1
+
+# sudo usermod -G db2iadm1 forma2 
+# echo 'export PATH=:/home/db2inst1/sqllib/bin:$PATH' >> .bashrc
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Instalación del emulador 3270
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# sudo apt-get install -y x3270
+# Antes de ejecutar por primera vez:
+# xset fp rehash
+# x3270
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Instalación COBOL y OpenCobolIDE:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+wget https://launchpadlibrarian.net/300661364/python3-opencobolide_4.7.6-1_all.deb
+
+sudo apt install -y ./python3-opencobolide_4.7.6-1_all.deb
+
+# Esto instala  gnucobol v1.0. Para instalar v3.0 hacemos:
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Instalación gnucobol 3.0:
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
 wget http://sourceforge.net/projects/open-cobol/files/gnu-cobol/3.0/gnucobol-3.0-rc1.tar.gz
-tar -xvf gnucobol-3.0-rc1.tar.gz 
+tar xvf gnucobol-3.0.tar.gz
+cd gnu-cobol-3.0
+./configure
+make
+make check
+sudo make install
+sudo ldconfig
