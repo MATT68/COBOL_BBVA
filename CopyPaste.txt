@@ -1,5 +1,21 @@
    Día: 2020-04-01
    -----------------------------------
+   Esquemas de codificación de caracteres:
+   ASCII   => Unix, Linux, Windows, etc. 
+   EBCDIC  => Mainframes IBM (z/OS, ...)
+     
+     IÑIGO =>  ASCII/EBCDIC necesitan un Mapa del país/idioma .
+       IÑIGO => ASCII(+1145 - Latin spanish) => X'C97BC9C7D6' => ASCII(+1145 - Latin spanish) => IÑIGO
+       IÑIGO => ASCII(+1145 - Latin spanish) => X'C97BC9C7D6' => ASCII(+1141 - Central Austria) => I#IGO
+     ....
+       
+   UNICODE => Esquema de codificación de caracteres
+       IÑIGO => UNICODE (UTF-8) => X'49C39149474F' => UNICODE (UTF-8) - Central Austria) => IÑIGO
+       X (1 ideograma) => UNICODE (UTF-8)  => X'C391D3' 
+       Asiáticos: UTF-16
+       X (1 ideograma) => UNICODE (UTF-16) => X'D1C2' 
+....
+   
    Resta de fechas (DATETIME) da como resultado "Date Duration":
    SELECT FX_COMPRA - FX_ALTA  ...
         RESULTADO: 00000101   (yyyymmdd)  0000 años, 01 mes y 01 día
