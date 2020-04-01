@@ -1,0 +1,61 @@
+   Día: 2020-04-01
+   -----------------------------------
+   TIMESTAMP --> YYYY-MM-DD-HH.MM.SS.MMMMMM
+   
+   CLIENTES:
+    NU_CLIENTE     NOMBRE   APELLIDO1 .....  USER    PROGRAM    TIME_STAMP
+       X             X          X             ?         ?            ?
+   
+   ? = Auditoría
+   
+   UPDATE CLIENTES
+     SET COL1 =  ...,
+         COL2 =  ...,
+         USER      =     ,
+         PROGRAM   =     ,
+         TIMESTAMP =  CURRENT TIMESTAMP   (SPECIAL REGISTER )
+     WHERE NU_CLIENTE = ...
+   
+   
+   
+   --  
+    SELECT ...
+      FROM FORMA2.CLIENTES
+    WHERE
+    
+    -- MySQL  => Base de datos, SCHEMA
+    -- Oracle => User, SCHEMA
+    -- DB2    => Owner, propietario, SCHEMA 
+
+    MySQL Workbench
+    Oracle Developer
+    Microsoft SQL Studio
+    DBeaver
+    DB2 Data Studio
+
+    SELECT ....
+      FROM CLIENTES
+    WHERE  TIPO IN ('A1','A2','B4');
+
+    SELECT ....
+      FROM CLIENTES
+    WHERE  TIPO = 'A1'
+       OR  TIPO = 'A2'
+       OR  TIPO = 'B4';
+
+     SELECT ....
+      FROM CLIENTES
+     WHERE NOMBRE = 'MATIAS' 
+        OR NOMBRE = 'Matías'
+        OR NOMBRE = 'Matias'
+        OR NOMBRE = 'MATÍAS' 
+        OR NOMBRE = 'maTías'
+ 
+ Estandarizar:  MATIAS <=== 'Matías' <== 'Matias' <== 'MATÍAS' 
+ Para poder buscar sólo con esta sentencia:
+
+   SELECT ....
+     FROM CLIENTES
+    WHERE NOMBRE = 'MATIAS'
+  
+ CPU   = € € € €
