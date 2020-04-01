@@ -71,4 +71,8 @@ WHERE NOMBRE LIKE 'E%'
  Ejercicio 3:
  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
  
- 
+ 1.- SELECT SUBSTR(NOMBRE,1,1) || '. ' || 
+       STRIP(APELLIDO1,T) || '  ' || 
+       RTRIM(APELLIDO2) AS NOMBRE_COMPLETO, 
+ SUBSTR(CODPOSTAL,1,2) AS PROVINCIA  
+ FROM CLIENTES c 
