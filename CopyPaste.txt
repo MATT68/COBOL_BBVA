@@ -1,6 +1,15 @@
    Día: 2020-04-01
    -----------------------------------
-   TIMESTAMP --> YYYY-MM-DD-HH.MM.SS.MMMMMM
+   LOB  =>  Large OBject (10 años de viejunía)
+    
+   CLOB => CHARACTER LOB
+   BLOB => BINARY   LOB
+   DBCLOB => "ideogramas" LOB
+
+   LOB Extenders => funciones para insertar, actualizar LOBs
+   -------------------------------------------------------------
+   
+ TIMESTAMP --> YYYY-MM-DD-HH.MM.SS.MMMMMM
    
    CLIENTES:
     NU_CLIENTE     NOMBRE   APELLIDO1 .....  USER    PROGRAM    TIME_STAMP
