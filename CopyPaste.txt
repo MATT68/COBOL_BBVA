@@ -16,7 +16,7 @@
       12  (dos  bytes)                       0000 1100  (1 byte - 8 bits)                       X'0C'
       255 (tres bytes)                       1111 1111  (1 byte - 8 bits)                       X'FF'
      65535 (cinco bytes)                    1111 1111 1111 1111  (2 bytes - 16 bits)            X'FFFF'
-      ? (cinco bytes)                       1010 1101 1011 0111  (2 bytes - 16 bits)            X'ADB7'
+      44471 (cinco bytes)                   1010 1101 1011 0111  (2 bytes - 16 bits)            X'ADB7'
     
    
    
