@@ -1,6 +1,8 @@
    Día: 2020-04-01
    -----------------------------------
-   
+   Resta de fechas (DATETIME) da como resultado "Date Duration":
+   SELECT FX_COMPRA - FX_ALTA  ...
+        RESULTADO: 00000101   (yyyymmdd)  0000 años, 01 mes y 01 día
    
    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   
    FUNCIONES Y OPERACIONES :  NO SE DEBEN USAR EN LA CLÁUSULA WHERE !!! 
