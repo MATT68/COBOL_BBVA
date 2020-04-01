@@ -1,5 +1,11 @@
    Día: 2020-04-01
    -----------------------------------
+   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   FUNCION COALESCE: COALESCE(COL1, COL2, COL3, 'VACIO')  => Devuelve la primera columna no nula.
+   
+   FUNCION ESPECÍFICA ORACLE: NVL(A,B) ó si tienes tres argumentos:  NVL2(A,B,C)
+   
+   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
    Esquemas de codificación de caracteres:
    ASCII   => Unix, Linux, Windows, etc. 
    EBCDIC  => Mainframes IBM (z/OS, ...)
