@@ -1,0 +1,29 @@
+
+  Entorno real de trabajo en BBVA:
+
+  - Personal Communications (programa para conectarse al Host/Mainframe)
+  - Host/Mainframe: IBM - Z/OS : TSO, ISPF, JCLs, etc.
+  - Némesis (Framework BBVA para Desarrollo )
+  - Base de datos: DB2 - Z/OS
+  - COBOL sobre Z/OS 
+  - ....
+
+  Entorno del curso :
+  - Personal Communications (programa para conectarse al Host/Mainframe)
+ [ - Intento de conexión a Host del curso a través de OpenVPN.    
+  - TSO, ISPF, JCLs, etc. ]
+  - Máquina Virtual (DB2_LUW -SQL- , COBOL sobre Linux, ... 
+    ... [Personal Communications para Windows] )
+  - GitHub: Google: github matias andres BBVA
+  - Dropbox:
+
+  Orden de materias en este curso :
+  - SQL (intro)
+  - TSO, ISPF, JCLs, SORTs, etc. 
+  - COBOL (ficheros y/o tablas DB2)
+  - SQL (resto)
+
+  Linux:
+  +++ Jaime, Pedro, Eduardo, Daniel, Javier, Angel
+  ++  Enrique, Sofía, Lidia  
+  +   Kevin 
