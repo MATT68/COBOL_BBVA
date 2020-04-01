@@ -1,5 +1,27 @@
    Día: 2020-04-01
    -----------------------------------
+   
+   Cómo almacena DB2 la información de los campos DECIMAL(p,a) en disco?
+   Se almacena en formato PACKED DECIMAL.
+   DECIMAL(8,2)    
+   Representación visual                           Representacion HEX
+   ---------------------                           ------------------
+      + 012345,27       ==>    00 12 34 52 7C  ==>    X'001243527C'
+      - 012345,27       ==>    00 12 34 52 7D  ==>    X'001243527D'
+    
+    
+   Cómo se almacenan los campos numéricos binarios?
+   Representación visual                   Almacenamiento en disco                             Representacion HEX
+   ---------------------                   -----------------------                             ------------------
+      12  (dos  bytes)                       0000 1100  (1 byte - 8 bits)                       X'0C'
+      255 (tres bytes)                       1111 1111  (1 byte - 8 bits)                       X'FF'
+     65535 (cinco bytes)                    1111 1111 1111 1111  (2 bytes - 16 bits)            X'FFFF'
+      ? (cinco bytes)                       1010 1101 1011 0111  (2 bytes - 16 bits)            X'ADB7'
+    
+   
+   
+   
+   
    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
    FUNCION COALESCE: COALESCE(COL1, COL2, COL3, 'VACIO')  => Devuelve la primera columna no nula.
    
