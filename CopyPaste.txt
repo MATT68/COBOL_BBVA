@@ -1,3 +1,44 @@
+   Día: 2020-04-02
+   -----------------------------------
+   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+   UDT (User-Defined Distinct Data Types)
+    CREATE DISTINCT TYPE EURO AS DECIMAL(9,2);
+    
+    UDF (User-Defined Function):
+     -- Automáticamente se crean dos UDF para convertir de EURO a DECIMAL(9,2)
+     -- y de DECIMAL(9,2) a EURO.
+     EURO(DECIMAL(9,2)) ==>  EURO         (Tipo de dato)
+     DECIMAL(EURO)      ==>  DECIMAL(m,n) (Tipo de dato)
+     -- El resto de funciones debemos definirlas:
+     Por ejemplo, caso X, más abajo.
+     
+    CREATE TABLE VENDEDOR
+      ( CO_VENDEDOR       CHAR(8)   NOT NULL, 
+        APELLIDO1         CHAR(20)  NOT NULL,
+        ...
+        ...
+        SALARIO           EURO      NOT NULL, 
+        COMISION          EURO      ,
+        ... );
+        
+      SELECT ...
+       FROM VENDEDOR
+      WHERE SALARIO > EURO(18500,00);
+             EURO      EURO(DECIMAL(7,2))
+      -- ?? WHERE FX_CONTRAT > 2020,23 ??? NO FUNCIONA PORQUE SON TIPOS DE DATO DIFERENTE
+      
+      -- CASO X:
+      SELECT CO_VENDEDOR, SALARIO + COMISION
+       FROM VENDEDOR
+      ===> KASKA!?   ==>  No está definida la función '+' para tipo de dato EURO.
+      -- Posible solución (de tipo ñapa). 
+      SELECT CO_VENDEDOR, DECIMAL(SALARIO) + DECIMAL(COMISION)
+       FROM VENDEDOR
+      
+    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
    Día: 2020-04-01
    -----------------------------------
    
