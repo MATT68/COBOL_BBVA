@@ -152,9 +152,22 @@ WHERE ANYO_ANT     > ANYO_DOS_ANT
   1.- Mostrar para cada cliente el día de la semana y el mes en el que se dieron de alta (por separado, en número y en nombre).
   2.- Mostrar el nombre y apellidos de los clientes en minúsculas.
   3.- Mostrar el nombre y apellidos de los clientes en formato "Capitalize" (Matias Andres Perez).
-  4.- Mostrar la representación en Unicode UTF-8 del nombre y apellidos de los clientes (añade también el salario).
+  4.- Mostrar la representación en Unicode UTF-8 del nombre y apellidos de los clientes (No hay función Unicode en DB2 LUW).
 
+SELECT DAYNAME(FX_ALTA,'CLDR181_es_ES') DIA , 
+       UPPER(DAYNAME(FX_ALTA,'CLDR181_es_ES')) DIA2 , 
+       DAYOFWEEK_ISO(FX_ALTA) NUM_DIA,
+       MONTHNAME(FX_ALTA,'CLDR181_es_ES') MES,
+       LOWER(NOMBRE), LCASE(APELLIDO1), LOWER(APELLIDO2),
+       SUBSTR(NOMBRE,1,1) || SUBSTR(LOWER(NOMBRE),2) Nombre,
+       SUBSTR(APELLIDO1,1,1) || SUBSTR(LOWER(APELLIDO1),2) Apellido1
+  FROM CLIENTES c 
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ Ejercicio 4:
+ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+ 1.- 
+ 
  
  
