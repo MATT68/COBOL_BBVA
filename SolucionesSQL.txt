@@ -150,7 +150,9 @@ WHERE ANYO_ANT     > ANYO_DOS_ANT
   EJERCICIOS EXTRA PARA EL GRUPO 3 (DE FUNCIONES ESCALARES):
   
   1.- Mostrar para cada cliente el día de la semana y el mes en el que se dieron de alta (por separado, en número y en nombre).
-  2.-  
+  2.- Mostrar el nombre y apellidos de los clientes en minúsculas.
+  3.- Mostrar el nombre y apellidos de los clientes en formato "Capitalize" (Matias Andres Perez).
+  4.- Mostrar la representación en Unicode UTF-8 del nombre y apellidos de los clientes (añade también el salario).
 
 
 
