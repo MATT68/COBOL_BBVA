@@ -135,6 +135,23 @@ WHERE ANYO_ANT     > ANYO_DOS_ANT
 
 
 13.-
+14.- SELECT CLIENTE, COMPRAS_ANUAL, FX_NACIMIENTO,
+       CASE
+        WHEN YEAR(CURRENT_DATE - FX_NACIMIENTO) < 20              THEN ' < 20 '
+        WHEN YEAR(CURRENT_DATE - FX_NACIMIENTO) BETWEEN 20 AND 30 THEN ' 20 - 30  '  
+        WHEN YEAR(CURRENT_DATE - FX_NACIMIENTO) BETWEEN 30 AND 40 THEN ' 30 - 40  '  
+        WHEN YEAR(CURRENT_DATE - FX_NACIMIENTO) BETWEEN 40 AND 50 THEN ' 40 - 50  '  
+        WHEN YEAR(CURRENT_DATE - FX_NACIMIENTO) BETWEEN 50 AND 60 THEN ' 50 - 60  '  
+        ELSE                                                           ' > 60  '
+       END 
+       AS RANGO_EDAD
+ FROM CLIENTES 
+ 
+  EJERCICIOS EXTRA PARA EL GRUPO 3 (DE FUNCIONES ESCALARES):
+  
+  1.- Mostrar para cada cliente el día de la semana y el mes en el que se dieron de alta (por separado, en número y en nombre).
+  2.-  
+
 
 
  
